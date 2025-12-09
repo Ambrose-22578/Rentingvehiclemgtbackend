@@ -1,0 +1,267 @@
+
+//USERS HTTP REQUESTS
+
+### Get all the users
+GET http://localhost:3000/api/users 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzNzk3Mzc4LCJleHAiOjE3NjM4MDA5Nzh9.X7KVqEG_lxaHnG_M1XyiXpzewri3q6BzgucN5jrwrFo
+
+
+###Get user by id
+GET http://localhost:3000/api/users/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM.eyJ1c2VyX2lkIjoxMCwiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMjBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYzNTc0NjYzLCJleHAiOjE3NjM1NzgyNjN9.EbjmOJIqD9Hn2WY-IlqcFFVCUzff0atsZqXqFyf0f34
+
+
+### Update user by id
+PUT http://localhost:3000/api/users/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM.eyJ1c2VyX2lkIjoxMCwiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMjBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYzNTc0NjYzLCJleHAiOjE3NjM1NzgyNjN9.EbjmOJIqD9Hn2WY-IlqcFFVCUzff0atsZqXqFyf0f34
+Content-Type: application/json
+
+{
+  "first_name": "Jane",
+  "last_name": "Doe",
+  "email": "janedoe@mail.com",
+  "contact_phone": "0790000000",
+  "address": "Nairobi",
+  "role": "admin"
+}
+#
+
+
+### delete user by id
+ DELETE http://localhost:3000/api/users/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM.eyJ1c2VyX2lkIjoxMCwiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMjBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYzNTc0NjYzLCJleHAiOjE3NjM1NzgyNjN9.EbjmOJIqD9Hn2WY-IlqcFFVCUzff0atsZqXqFyf0f34
+
+
+
+
+### Register
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "first_name": "baba",
+  "last_name": "Koech",
+  "contact_phone": "0718964629",
+  "address": "Nairobi, Kenya",
+  "email": "ambrose@gmail.com",
+  "password": "Koech12",
+  "role": "admin"
+}
+
+### login
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "ambrosekoech150@gmail.com",
+  "password":"koech@12"
+}
+
+
+
+
+
+//BOOKINGS HTTP REQUESTS
+
+###  Get all bookings (Admin sees all, users see only their own)
+GET http://localhost:3000/api/bookings
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0MiwiZmlyc3RfbmFtZSI6ImJhYmEiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjQ1MDk3NjQsImV4cCI6MTc2NDUxMzM2NH0.ClK3kb45gZv_CeMceQAxK-ORMp12HqvOXUH-Ltbitxo
+### Get booking by id
+GET http://localhost:3000/api/bookings/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM.eyJ1c2VyX2lkIjoxMCwiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMjBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYzNjIxMDkxLCJleHAiOjE3NjM2MjQ2OTF9.B4FgBl-doS7ZEYmp0EorKTxIoUMdQMv4dNOzMNX_mA4
+### create a new booking by user only
+POST http://localhost:3000/api/bookings
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0MSwiZmlyc3RfbmFtZSI6ImJhYmEiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MzgxMzMwOCwiZXhwIjoxNzYzODE2OTA4fQ.HFXkZHcXgUgKOTW30b-Uwm4yJ0ZmIJZdFBCX3I3x1OY
+{
+  "user_id": 41,
+  "vehicle_id": 1,
+  "booking_date": "2025-11-20",
+  "return_date": "2025-11-25",
+  "total_amount": 300.00
+}
+
+###  Update booking by id (Admin only)
+PUT http://localhost:3000/api/bookings/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM.eyJ1c2VyX2lkIjoxMCwiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMjBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYzNTc4NzE3LCJleHAiOjE3NjM1ODIzMTd9.nY5UYb_VSbtkbQ8QwcwbMDyk8yBfBrqlgajlJqt4hd0
+Content-Type: application/json
+
+{
+  "booking_status": "Confirmed",
+  "total_amount": 1600.00
+}
+
+###  Delete booking by id (Admin only)
+DELETE http://localhost:3000/api/bookings/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM.eyJ1c2VyX2lkIjoxMCwiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMjBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYzNTc4NzE3LCJleHAiOjE3NjM1ODIzMTd9.nY5UYb_VSbtkbQ8QwcwbMDyk8yBfBrqlgajlJqt4hd0
+
+
+
+//VEHICLES HTTP REQUESTS
+
+### Get all vehicles
+GET http://localhost:3000/api/vehicles
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEzMTQ1LCJleHAiOjE3NjM4MTY3NDV9.ps4tNRz8s_3OkRbbKjF_p5FnoD4hz89eZyTZcuaGGZM
+
+
+### Get vehicle by ID
+
+GET http://localhost:3000/api/vehicles/1
+Authorization: Bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEzMDM0LCJleHAiOjE3NjM4MTY2MzR9.ZAXNWGo5DS6G5deokvV79lBeLHMz-FCtVSWLC8aeQdw
+
+### Create new vehicle
+POST http://localhost:3000/api/vehicles
+Authorization: Bearer YOUR_ADMIN_JWT_TOKEN
+Content-Type: application/json
+
+{
+  "vehicle_spec_id": 1,
+  "rental_rate": 3500.50,
+  "availability": "Available",
+  "image_url": "https://example.com/vehicle1.jpg"
+}
+
+### Update vehicle
+PUT http://localhost:3000/api/vehicles/1
+Authorization: Bearer YOUR_ADMIN_JWT_TOKEN
+Content-Type: application/json
+
+{
+  "vehicle_spec_id": 2,
+  "rental_rate": 4000.75,
+  "availability": "Unavailable",
+  "image_url": "https://example.com/vehicle1-new.jpg"
+}
+
+### Delete vehicle
+DELETE http://localhost:3000/api/vehicles/1
+Authorization: Bearer YOUR_ADMIN_JWT_TOKEN
+
+
+
+
+//VEHICLE SPECIFICATIONS HTTP REQUESTS
+
+### Get all vehicle specifications
+GET http://localhost:3000/api/vehicle-specs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM.eyJ1c2VyX2lkIjoxMCwiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMjBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzYzNjIxMDkxLCJleHAiOjE3NjM2MjQ2OTF9.B4FgBl-doS7ZEYmp0EorKTxIoUMdQMv4dNOzMNX_mA4
+
+### Get vehicle specification by ID
+GET http://localhost:3000/api/vehicle-specs/1
+Authorization: Bearer YOUR_JWT_TOKEN
+
+### Create new vehicle specification
+POST http://localhost:3000/api/vehicle-specs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEwODU3LCJleHAiOjE3NjM4MTQ0NTd9.KnrLXLeYcPWrYWt30zvCUUX-DcJ4x0Ab91E4ohs3YIY
+Content-Type: application/json
+
+{
+  "manufacturer": "Toyota",
+  "model": "Corolla",
+  "year": 2022,
+  "fuel_type": "Petrol",
+  "engine_capacity": "1.8L",
+  "transmission": "Automatic",
+  "seating_capacity": 5,
+  "color": "Silver",
+  "features": "Air Conditioning, GPS, Bluetooth"
+}
+
+### Update vehicle specification
+PUT http://localhost:3000/api/vehicle-specs/1
+Authorization: Bearer YOUR_ADMIN_JWT_TOKEN
+Content-Type: application/json
+
+{
+  "manufacturer": "Toyota",
+  "model": "Corolla",
+  "year": 2023,
+  "fuel_type": "Petrol",
+  "engine_capacity": "2.0L",
+  "transmission": "Manual",
+  "seating_capacity": 5,
+  "color": "Black",
+  "features": "Air Conditioning, GPS, Bluetooth, Sunroof"
+}
+
+### Delete vehicle specification
+DELETE http://localhost:3000/api/vehicle-specs/1
+Authorization: Bearer YOUR_ADMIN_JWT_TOKEN
+
+
+
+//CUSTOMER SUPPORT TICKETS HTTP REQUESTS
+
+### Get all support tickets
+GET http://localhost:3000/api/support-tickets/18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJWaWN0b3IiLCJlbWFpbCI6ImFtYnJvc2Vrb2VjaDE1MEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2NDg1NTYxMCwiZXhwIjoxNzY0ODU5MjEwfQ.Rpn4Bw_z-kv_k3RcdFM1QcfE3wD2L-frS29bXiG8_TI
+
+### Get support ticket by ID
+GET http://localhost:3000/api/support-tickets/17
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJWaWN0b3IiLCJlbWFpbCI6ImFtYnJvc2Vrb2VjaDE1MEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2NDg1NTYxMCwiZXhwIjoxNzY0ODU5MjEwfQ.Rpn4Bw_z-kv_k3RcdFM1QcfE3wD2L-frS29bXiG8_TI
+
+### Create new support ticket
+POST http://localhost:3000/api/support-tickets
+Authorization: Bearer YOUR_JWT_TOKEN
+Content-Type: application/json
+
+{
+  "subject": "Car not starting",
+  "description": "The vehicle I rented does not start when I try to use it."
+}
+
+### Update support ticket (admin only)
+PUT http://localhost:3000/api/support-tickets/1
+Authorization: Bearer YOUR_ADMIN_JWT_TOKEN
+Content-Type: application/json
+
+{
+  "subject": "Car not starting - urgent",
+  "description": "The vehicle rental is urgent, needs immediate fix.",
+  "status": "In Progress"
+}
+
+### Delete support ticket (admin only)
+DELETE http://localhost:3000/api/support-tickets/1
+Authorization: Bearer YOUR_ADMIN_JWT_TOKEN
+
+
+
+//PAYMENTS HTTP REQUESTS
+
+
+### Get all payments (admin only)
+GET http://localhost:3000/api/payments
+Authorization: Bearer YOUR_ADMIN_JWT_TOKEN
+
+### Get payment by ID (admin only)
+GET http://localhost:3000/api/payments/1
+Authorization: Bearer YOUR_ADMIN_JWT_TOKEN
+
+### Create new payment
+POST http://localhost:3000/api/payments
+Authorization: Bearer YOUR_JWT_TOKEN
+Content-Type: application/json
+
+{
+  "booking_id": 1,
+  "amount": 5000,
+  "payment_method": "Credit Card",
+  "transaction_id": "TXN123456",
+  "payment_status": "Pending"
+}
+
+### Update payment (admin only)
+PUT http://localhost:3000/api/payments/1
+Authorization: Bearer YOUR_ADMIN_JWT_TOKEN
+Content-Type: application/json
+
+{
+  "payment_status": "Paid",
+  "payment_method": "Credit Card",
+  "transaction_id": "TXN123456UPDATED"
+}
+
+### Delete payment (admin only)
+DELETE http://localhost:3000/api/payments/1
+Authorization: Bearer YOUR_ADMIN_JWT_TOKEN
