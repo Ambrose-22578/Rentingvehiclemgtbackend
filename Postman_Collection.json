@@ -1,0 +1,772 @@
+{
+  "info": {
+    "_postman_id": "renting-vehicle-mgt",
+    "name": "Renting Vehicle Management Backend",
+    "description": "API collection for vehicle rental management system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get all users",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users"]
+            }
+          }
+        },
+        {
+          "name": "Get user by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/users/3",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", "3"]
+            }
+          }
+        },
+        {
+          "name": "Update user by ID",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Jane\",\n  \"last_name\": \"Doe\",\n  \"email\": \"janedoe@mail.com\",\n  \"contact_phone\": \"0790000000\",\n  \"address\": \"Nairobi\",\n  \"role\": \"admin\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/users/8",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", "8"]
+            }
+          }
+        },
+        {
+          "name": "Delete user by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/users/8",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", "8"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"baba\",\n  \"last_name\": \"Koech\",\n  \"contact_phone\": \"0718964629\",\n  \"address\": \"Nairobi, Kenya\",\n  \"email\": \"ambrose@gmail.com\",\n  \"password\": \"Koech12\",\n  \"role\": \"admin\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"ambrosekoech150@gmail.com\",\n  \"password\": \"koech@12\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "Get all bookings",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0MiwiZmlyc3RfbmFtZSI6ImJhYmEiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjQ1MDk3NjQsImV4cCI6MTc2NDUxMzM2NH0.ClK3kb45gZv_CeMceQAxK-ORMp12HqvOXUH-Ltbitxo",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/bookings",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bookings"]
+            }
+          }
+        },
+        {
+          "name": "Get booking by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/bookings/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bookings", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create new booking",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0MSwiZmlyc3RfbmFtZSI6ImJhYmEiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MzgxMzMwOCwiZXhwIjoxNzYzODE2OTA4fQ.HFXkZHcXgUgKOTW30b-Uwm4yJ0ZmIJZdFBCX3I3x1OY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": 41,\n  \"vehicle_id\": 1,\n  \"booking_date\": \"2025-11-20\",\n  \"return_date\": \"2025-11-25\",\n  \"total_amount\": 300.00\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/bookings",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bookings"]
+            }
+          }
+        },
+        {
+          "name": "Update booking",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"booking_status\": \"Confirmed\",\n  \"total_amount\": 1600.00\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/bookings/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bookings", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete booking",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/bookings/5",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "bookings", "5"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vehicles",
+      "item": [
+        {
+          "name": "Get all vehicles",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEzMTQ1LCJleHAiOjE3NjM4MTY3NDV9.ps4tNRz8s_3OkRbbKjF_p5FnoD4hz89eZyTZcuaGGZM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/vehicles",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "vehicles"]
+            }
+          }
+        },
+        {
+          "name": "Get vehicle by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEzMDM0LCJleHAiOjE3NjM4MTY2MzR9.ZAXNWGo5DS6G5deokvV79lBeLHMz-FCtVSWLC8aeQdw",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/vehicles/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "vehicles", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create new vehicle",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_ADMIN_JWT_TOKEN",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle_spec_id\": 1,\n  \"rental_rate\": 3500.50,\n  \"availability\": \"Available\",\n  \"image_url\": \"https://example.com/vehicle1.jpg\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/vehicles",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "vehicles"]
+            }
+          }
+        },
+        {
+          "name": "Update vehicle",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_ADMIN_JWT_TOKEN",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle_spec_id\": 2,\n  \"rental_rate\": 4000.75,\n  \"availability\": \"Unavailable\",\n  \"image_url\": \"https://example.com/vehicle1-new.jpg\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/vehicles/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "vehicles", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete vehicle",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_ADMIN_JWT_TOKEN",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/vehicles/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "vehicles", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vehicle Specifications",
+      "item": [
+        {
+          "name": "Get all vehicle specifications",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEyNzY2LCJleHAiOjE3NjM4MTYzNjZ9.ASvFaDiLvsrG5p4Ucr8z48nFiJbypSavSAQTqmHmJoM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/vehicle-specs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "vehicle-specs"]
+            }
+          }
+        },
+        {
+          "name": "Get vehicle specification by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_JWT_TOKEN",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/vehicle-specs/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "vehicle-specs", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create new vehicle specification",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNywiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJLb2VjaCIsImVtYWlsIjoiYW1icm9zZWtvZWNoMG8wQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYzODEwODU3LCJleHAiOjE3NjM4MTQ0NTd9.KnrLXLeYcPWrYWt30zvCUUX-DcJ4x0Ab91E4ohs3YIY",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"manufacturer\": \"Toyota\",\n  \"model\": \"Corolla\",\n  \"year\": 2022,\n  \"fuel_type\": \"Petrol\",\n  \"engine_capacity\": \"1.8L\",\n  \"transmission\": \"Automatic\",\n  \"seating_capacity\": 5,\n  \"color\": \"Silver\",\n  \"features\": \"Air Conditioning, GPS, Bluetooth\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/vehicle-specs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "vehicle-specs"]
+            }
+          }
+        },
+        {
+          "name": "Update vehicle specification",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_ADMIN_JWT_TOKEN",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"manufacturer\": \"Toyota\",\n  \"model\": \"Corolla\",\n  \"year\": 2023,\n  \"fuel_type\": \"Petrol\",\n  \"engine_capacity\": \"2.0L\",\n  \"transmission\": \"Manual\",\n  \"seating_capacity\": 5,\n  \"color\": \"Black\",\n  \"features\": \"Air Conditioning, GPS, Bluetooth, Sunroof\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/vehicle-specs/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "vehicle-specs", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete vehicle specification",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_ADMIN_JWT_TOKEN",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/vehicle-specs/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "vehicle-specs", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Customer Support",
+      "item": [
+        {
+          "name": "Get support ticket",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJWaWN0b3IiLCJlbWFpbCI6ImFtYnJvc2Vrb2VjaDE1MEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2NDg1NTYxMCwiZXhwIjoxNzY0ODU5MjEwfQ.Rpn4Bw_z-kv_k3RcdFM1QcfE3wD2L-frS29bXiG8_TI",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/support-tickets/18",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "support-tickets", "18"]
+            }
+          }
+        },
+        {
+          "name": "Get support ticket by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZmlyc3RfbmFtZSI6IkFtYnJvc2UiLCJsYXN0X25hbWUiOiJWaWN0b3IiLCJlbWFpbCI6ImFtYnJvc2Vrb2VjaDE1MEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc2NDg1NTYxMCwiZXhwIjoxNzY0ODU5MjEwfQ.Rpn4Bw_z-kv_k3RcdFM1QcfE3wD2L-frS29bXiG8_TI",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/support-tickets/17",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "support-tickets", "17"]
+            }
+          }
+        },
+        {
+          "name": "Create new support ticket",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_JWT_TOKEN",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"subject\": \"Car not starting\",\n  \"description\": \"The vehicle I rented does not start when I try to use it.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/support-tickets",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "support-tickets"]
+            }
+          }
+        },
+        {
+          "name": "Update support ticket",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_ADMIN_JWT_TOKEN",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"subject\": \"Car not starting - urgent\",\n  \"description\": \"The vehicle rental is urgent, needs immediate fix.\",\n  \"status\": \"In Progress\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/support-tickets/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "support-tickets", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete support ticket",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_ADMIN_JWT_TOKEN",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/support-tickets/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "support-tickets", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Payments",
+      "item": [
+        {
+          "name": "Get all payments",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_ADMIN_JWT_TOKEN",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/payments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "payments"]
+            }
+          }
+        },
+        {
+          "name": "Get payment by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_ADMIN_JWT_TOKEN",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/payments/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "payments", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create new payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_JWT_TOKEN",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"booking_id\": 1,\n  \"amount\": 5000,\n  \"payment_method\": \"Credit Card\",\n  \"transaction_id\": \"TXN123456\",\n  \"payment_status\": \"Pending\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/payments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "payments"]
+            }
+          }
+        },
+        {
+          "name": "Update payment",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_ADMIN_JWT_TOKEN",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"payment_status\": \"Paid\",\n  \"payment_method\": \"Credit Card\",\n  \"transaction_id\": \"TXN123456UPDATED\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/payments/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "payments", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete payment",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer YOUR_ADMIN_JWT_TOKEN",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/payments/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "payments", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
